@@ -1,0 +1,70 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign Up - RealPro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+<div class="container">
+<div class="logo">🏢 RealPro</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="listing.html">Listing</a>
+<a href="contact.html">Contact</a>
+<a href="agent.html">Agents</a>
+<a href="about.html">About</a>
+<a href="blog.html">Blog</a>
+</nav>
+<div class="header-right">
+<a href="signup.html" class="signup">Sign Up</a>
+<a class="create-btn">Create A Listing</a>
+<a class="cart">🛒</a>
+</div>
+</div>
+</header>
+
+<div class="signup-wrap">
+<div class="signup-box">
+<h2>Sign Up</h2>
+<p class="sub">Please enter your details to create a new account.</p>
+
+<form>
+<input type="text" placeholder="UserName">
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+<input type="password" placeholder="Repeat Password">
+<button type="submit" class="up-btn">Sign Up</button>
+<p class="login-link">Are you a member? <a href="signin.html">Login Now</a></p>
+</form>
+</div>
+</div>
+
+<div class="blue-line"></div>
+
+<footer class="main-footer">
+<div class="container footer-grid">
+<div class="f-col brand">
+<div class="flogo">🏢 RealPro</div>
+<p>📍 3755 St SE Salem, Corner with Sunny Boulevard, 37557, Australia</p>
+<p>📞 (305) 555-4446</p>
+<p>✉️ Youremail@gmail.com</p>
+<div class="fsocials"><span>🐦</span><span>f</span><span>📸</span><span>▶️</span></div>
+</div>
+<div class="f-col"><h4>Explore</h4><a>About Us</a><a>Our Projects</a><a>Pricing</a><a>Testimonial</a><a>Appointment</a></div>
+<div class="f-col"><h4>Links</h4><a>Services</a><a>Contact</a><a>Home Buying</a><a>Home Selling</a><a>Real Estate</a></div>
+<div class="f-col"><h4>T&C</h4><a>Property on sale</a><a>About Us</a><a>Our Team</a><a>Terms of use</a><a>Privacy Policy</a></div>
+<div class="f-col sub"><h4>Subscribe</h4><p>Sign Up for Our Newsletter to get Latest Updates and Offers</p><div class="subbox"><input placeholder="Your Email"><button>Subscribe</button></div></div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property Listing - RealPro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+<div class="container">
+<div class="logo">🏢 RealPro</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="listing.html">Listing</a>
+<a href="contact.html">Contact</a>
+<a href="agent.html">Agents</a>
+<a href="about.html">About</a>
+<a href="blog.html">Blog</a>
+</nav>
+<div class="header-right">
+<a href="signup.html" class="signup">Sign Up</a>
+<a class="create-btn">Create A Listing</a>
+<a class="cart">🛒</a>
+</div>
+</div>
+</header>
+
+<div class="breadcrumb-bar"><div class="container"><a href="index.html">Home</a> <span>›</span> <span>Listing</span></div></div>
+
+<section class="section pt">
+<div class="container">
+<div class="listing-head">
+<h2 class="section-title">Property Listing</h2>
+<div class="listing-controls">
+<div class="sort">Most popular <span>⌄</span></div>
+<div class="view-icons">
+<a href="listing.html" class="view-icon" title="List View">☰</a>
+<a href="listing-grid.html" class="view-icon active-icon" title="Grid View">▦</a>
+</div>
+</div>
+</div>
+
+<div class="filter-bar">
+<input type="text" placeholder="What are looking for">
+<div class="select"><span>Status</span><span>⌄</span></div>
+<div class="select"><span>Type</span><span>⌄</span></div>
+<div class="select"><span>Beds</span><span>⌄</span></div>
+<div class="select"><span>Baths</span><span>⌄</span></div>
+<button class="icon-btn">↻</button>
+<button class="icon-btn">⧩</button>
+<a href="listing-grid.html" class="btn btn-primary btn-sm">Search</a>
+</div>
+
+<div class="grid-3 mt-2">
+<div class="card prop-card-grid"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500"></div><div class="card-body"><h4>High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-outline btn-sm">View Detail</a></div></div></div>
+<div class="card prop-card-grid active-card"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500"><div class="card-actions"><span>♡</span><span>⇄</span></div></div><div class="card-body"><h4 class="text-blue">High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-primary btn-sm">View Detail</a></div></div></div>
+<div class="card prop-card-grid"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500"></div><div class="card-body"><h4>High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-outline btn-sm">View Detail</a></div></div></div>
+<div class="card prop-card-grid"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=500"></div><div class="card-body"><h4>High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-outline btn-sm">View Detail</a></div></div></div>
+<div class="card prop-card-grid"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500"></div><div class="card-body"><h4>High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-outline btn-sm">View Detail</a></div></div></div>
+<div class="card prop-card-grid"><div class="card-img"><span class="badge-rent">For Rent</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500"></div><div class="card-body"><h4>High-Rise Townhouse</h4><p class="small text-muted">📍 Southwestern Ontario, Ontario, Canada</p><div class="prop-meta"><span>🛏️ 41</span><span>🛁 32</span><span>📐 122.280 sqft</span></div><div class="prop-footer"><span class="price">$ 1.239 <span class="small">/Month</span></span><a href="property.html" class="btn btn-outline btn-sm">View Detail</a></div></div></div>
+</div>
+
+<div class="text-center mt-3">
+<a href="listing-grid.html" class="btn btn-primary btn-sm">View More</a>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-logo">🏢 RealPro</div><p class="small text-muted">📍 3755 St SE Salem, Corner with Sunny Boulevard, 37557, Australia</p><p class="small text-muted mt">📞 (305) 555-4446</p><p class="small text-muted">✉️ Youremail@gmail.com</p><div class="social-row"><a href="#" class="social">🐦</a><a href="#" class="social">f</a><a href="#" class="social">📷</a><a href="#" class="social">▶️</a></div></div>
+<div class="footer-col"><h4>Explore</h4><a href="about.html">About Us</a><a href="#">Our Projects</a><a href="#">Pricing</a><a href="#">Testimonial</a><a href="contact.html">Appointment</a></div>
+<div class="footer-col"><h4>Links</h4><a href="#">Services</a><a href="contact.html">Contact</a><a href="#">Home Buying</a><a href="#">Home Selling</a><a href="listing-grid.html">Real Estate</a></div>
+<div class="footer-col"><h4>T&C</h4><a href="listing-grid.html">Property on sale</a><a href="about.html">About Us</a><a href="agents.html">Our Team</a><a href="#">Terms of use</a><a href="#">Privacy Policy</a></div>
+<div class="footer-col"><h4>Subscribe</h4><p class="small text-muted">Sign Up for Our Newsletter to get Latest Updates and Offers</p><div class="subscribe-box"><input placeholder="Your Email"><button class="btn btn-primary btn-sm">Subscribe</button></div></div>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
