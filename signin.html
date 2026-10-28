@@ -32,13 +32,12 @@
 <p class="sub">Please enter your information to proceed with login.</p>
 
 <form>
-<div class="field error">
-<input type="text" placeholder="Account" value="">
+<div class="field">
+<input type="email" placeholder="Email Address" id="email" required>
 </div>
-<p class="error-text">⚠ Unknown Email Address. Check Again Or Try Your Username.</p>
 
 <div class="field">
-<input type="password" placeholder="Password" id="pass">
+<input type="password" placeholder="Password" id="password" required>
 <span class="eye" onclick="toggle()">👁️</span>
 </div>
 
@@ -72,45 +71,59 @@
 </div>
 </footer>
 
-    </div>
-
-  <script>
- 
-  document.querySelector('form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.querySelector('input[type="password"]').value;
-    
-    const saved = JSON.parse(localStorage.getItem('realpro_user'));
-    
-    if(!saved){
-      alert('No account found. Please sign up first');
-      return;
-    }
-    
-    if(saved.email === email && saved.password === password){
-      alert('Login successful! Welcome ' + saved.name);
-      localStorage.setItem('realpro_logged_in', 'true');
-      window.location.href = 'index.html';
-    } else {
-      alert('Wrong email or password');
-    }
-  });
-  </script>
-
-  </body> 
-</html>
-
 <script>
 function toggle(){
-let p=document.getElementById('pass');
-p.type = p.type==='password' ? 'text' : 'password';
+  let p=document.getElementById('password');
+  p.type = p.type==='password' ? 'text' : 'password';
 }
+
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('show');
+}
+
+// LOGIN LOGIC - FIXED
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  
+  const saved = JSON.parse(localStorage.getItem('realpro_user'));
+  
+  if(!saved){
+    alert('No account found. Please sign up first');
+    window.location.href = 'signup.html';
+    return;
+  }
+  
+  if(saved.email === email && saved.password === password){
+    alert('Login successful! Welcome ' + saved.name);
+    localStorage.setItem('realpro_logged_in', 'true');
+    window.location.href = 'index.html';
+  } else {
+    alert('Wrong email or password');
+  }
+});
 </script>
 
 <script>
-function toggleMenu(){
-  document.getElementById('navMenu').classList.toggle('show');
+// SHOW LOGGED IN USER IN HEADER
+const loggedIn = localStorage.getItem('realpro_logged_in');
+const savedUser = JSON.parse(localStorage.getItem('realpro_user'));
+const headerRight = document.querySelector('.header-right');
+
+if(loggedIn === 'true' && savedUser && headerRight){
+  headerRight.innerHTML = `
+    <span style="margin-right:10px; font-weight:600;">Hi, ${savedUser.name} 👋</span>
+    <a onclick="logout()" style="cursor:pointer; background:#e74c3c; color:white; padding:6px 12px; border-radius:5px;">Logout</a>
+    <a class="create-btn">Create A Listing</a>
+    <a class="cart">🛒</a>
+  `;
+}
+
+function logout(){
+  localStorage.removeItem('realpro_logged_in');
+  alert('Logged out');
+  window.location.href = 'signin.html';
 }
 </script>
 

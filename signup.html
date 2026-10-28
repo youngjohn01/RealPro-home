@@ -32,10 +32,10 @@
 <p class="sub">Please enter your details to create a new account.</p>
 
 <form>
-<input type="text" placeholder="UserName">
-<input type="email" placeholder="Email">
-<input type="password" placeholder="Password">
-<input type="password" placeholder="Repeat Password">
+<input type="text" placeholder="UserName" id="name" required>
+<input type="email" placeholder="Email" id="email" required>
+<input type="password" placeholder="Password" id="password" required>
+<input type="password" placeholder="Repeat Password" id="repeatPassword" required>
 <button type="submit" class="up-btn">Sign Up</button>
 <p class="login-link">Are you a member? <a href="signin.html">Login Now</a></p>
 </form>
@@ -60,28 +60,49 @@
 </div>
 </footer>
 
-    </div> 
-
-  <script>
- 
-  document.querySelector('form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.querySelector('input[type="password"]').value;
-    const name = document.querySelector('input[type="text"]').value;
-
-    localStorage.setItem('realpro_user', JSON.stringify({email, password, name}));
-    alert('Signup successful! Now go login');
-    window.location.href = 'signin.html';
-  });
-  </script>
-
-  </body> 
-</html>
-
 <script>
 function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('show');
+}
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const repeat = document.getElementById('repeatPassword').value;
+
+  if(password !== repeat){
+    alert('Passwords do not match!');
+    return;
+  }
+
+  localStorage.setItem('realpro_user', JSON.stringify({name, email, password}));
+  alert('Signup successful! Now login with same email');
+  window.location.href = 'signin.html';
+});
+</script>
+
+<script>
+// SHOW LOGGED IN USER IN HEADER
+const loggedIn = localStorage.getItem('realpro_logged_in');
+const savedUser = JSON.parse(localStorage.getItem('realpro_user'));
+const headerRight = document.querySelector('.header-right');
+
+if(loggedIn === 'true' && savedUser && headerRight){
+  headerRight.innerHTML = `
+    <span style="margin-right:10px; font-weight:600;">Hi, ${savedUser.name} 👋</span>
+    <a onclick="logout()" style="cursor:pointer; background:#e74c3c; color:white; padding:6px 12px; border-radius:5px;">Logout</a>
+    <a class="create-btn">Create A Listing</a>
+    <a class="cart">🛒</a>
+  `;
+}
+
+function logout(){
+  localStorage.removeItem('realpro_logged_in');
+  alert('Logged out');
+  window.location.href = 'signin.html';
 }
 </script>
 

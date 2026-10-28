@@ -107,5 +107,27 @@ function toggleMenu(){
 }
 </script>
 
+<script>
+// SHOW LOGGED IN USER IN HEADER
+const loggedIn = localStorage.getItem('realpro_logged_in');
+const savedUser = JSON.parse(localStorage.getItem('realpro_user'));
+const headerRight = document.querySelector('.header-right');
+
+if(loggedIn === 'true' && savedUser && headerRight){
+  headerRight.innerHTML = `
+    <span style="margin-right:10px; font-weight:600;">Hi, ${savedUser.name} 👋</span>
+    <a onclick="logout()" style="cursor:pointer; background:#e74c3c; color:white; padding:6px 12px; border-radius:5px;">Logout</a>
+    <a class="create-btn">Create A Listing</a>
+    <a class="cart">🛒</a>
+  `;
+}
+
+function logout(){
+  localStorage.removeItem('realpro_logged_in');
+  alert('Logged out');
+  window.location.href = 'signin.html';
+}
+</script>
+
 </body>
 </html>
