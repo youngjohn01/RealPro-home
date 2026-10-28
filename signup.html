@@ -60,6 +60,25 @@
 </div>
 </footer>
 
+    </div> 
+
+  <script>
+ 
+  document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    const name = document.querySelector('input[type="text"]').value;
+
+    localStorage.setItem('realpro_user', JSON.stringify({email, password, name}));
+    alert('Signup successful! Now go login');
+    window.location.href = 'signin.html';
+  });
+  </script>
+
+  </body> 
+</html>
+
 <script>
 function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('show');

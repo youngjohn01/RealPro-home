@@ -72,6 +72,35 @@
 </div>
 </footer>
 
+    </div>
+
+  <script>
+ 
+  document.querySelector('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    
+    const saved = JSON.parse(localStorage.getItem('realpro_user'));
+    
+    if(!saved){
+      alert('No account found. Please sign up first');
+      return;
+    }
+    
+    if(saved.email === email && saved.password === password){
+      alert('Login successful! Welcome ' + saved.name);
+      localStorage.setItem('realpro_logged_in', 'true');
+      window.location.href = 'index.html';
+    } else {
+      alert('Wrong email or password');
+    }
+  });
+  </script>
+
+  </body> 
+</html>
+
 <script>
 function toggle(){
 let p=document.getElementById('pass');
